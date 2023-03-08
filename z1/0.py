@@ -1,5 +1,3 @@
-from cProfile import label
-from numpy import append
 import numpy.random as rnd
 import matplotlib.pyplot as plt
 from math import sqrt
