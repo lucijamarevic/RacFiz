@@ -1,3 +1,4 @@
+
 import random as rnd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -28,14 +29,18 @@ i = [10*i for i in range(20,int(2e5)+1)]
 data = pi_mc(int(2e5),1)
 
 plt.plot(i,data["pi"][19:])
-#plt.show()
+plt.xlabel("i")
+plt.ylabel("pi")
+plt.show()
 
 plt.plot(i,data["err"][19:])
-#plt.show()
+plt.xlabel("i")
+plt.ylabel(r"|pi -  \pi|i^(1/2)")
+plt.show()
 
 #ode dodat scatter plot za udaljenosti, ovo nije dobro
-plt.scatter(data["r"]["x"], data["r"]["y"], s=5)
-plt.scatter(data["rk"]["xk"], data["rk"]["yk"], s=5, c="orange")
+plt.scatter(data["r"]["x"], data["r"]["y"], s=5, edgecolors="face")
+plt.scatter(data["rk"]["xk"], data["rk"]["yk"], s=5, c="orange", edgecolors="face")
 plt.xlim(0,2e5)
 plt.ylim(0,2e5)
 plt.show()
